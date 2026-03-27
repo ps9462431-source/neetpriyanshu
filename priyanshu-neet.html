@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="jE5G91YN0hkJIktD5IZ5CY4GiHvqWp8_5kk1hxkyznQ" />
+  <meta name="description" content="Priyanshu NEET - Free NEET study material, MCQ practice, previous year papers, and tips & strategy." />
+  <title>Priyanshu NEET | Free Study Material & Strategy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06080f;
+      --bg2: #0d1117;
+      --card: #111827;
+      --border: #1e2a3a;
+      --accent: #00e5ff;
+      --accent2: #7c3aed;
+      --green: #22c55e;
+      --text: #e2f0ff;
+      --muted: #8da5bf;
+      --bio: #22c55e;
+      --chem: #f59e0b;
+      --phy: #60a5fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* BG GRID */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6,8,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--border); }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-glow {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(0,229,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .hero h1 .highlight { color: var(--accent); }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 13px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #06080f;
+    }
+    .btn-primary:hover { background: #33eaff; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,229,255,0.25); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* STATS */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 48px 0;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-card strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .stat-card span { font-size: 14px; color: var(--muted); }
+
+    /* SECTION HEADING */
+    .section-head { margin-bottom: 32px; }
+    .section-head h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-head p { color: var(--muted); font-size: 16px; }
+    .accent-line {
+      display: inline-block;
+      width: 48px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* SUBJECTS */
+    .subjects { padding: 60px 0; }
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+    .subject-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .subject-card:hover { transform: translateY(-4px); }
+    .subject-card.bio { border-top: 3px solid var(--bio); }
+    .subject-card.bio:hover { box-shadow: 0 12px 40px rgba(34,197,94,0.12); }
+    .subject-card.chem { border-top: 3px solid var(--chem); }
+    .subject-card.chem:hover { box-shadow: 0 12px 40px rgba(245,158,11,0.12); }
+    .subject-card.phy { border-top: 3px solid var(--phy); }
+    .subject-card.phy:hover { box-shadow: 0 12px 40px rgba(96,165,250,0.12); }
+    .subject-icon { font-size: 32px; margin-bottom: 14px; }
+    .subject-card h3 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .subject-card p { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+    .subject-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .tag-bio { background: rgba(34,197,94,0.1); color: var(--bio); }
+    .tag-chem { background: rgba(245,158,11,0.1); color: var(--chem); }
+    .tag-phy { background: rgba(96,165,250,0.1); color: var(--phy); }
+
+    /* MCQ SECTION */
+    .mcq-section { padding: 60px 0; }
+    .mcq-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .mcq-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.2s;
+    }
+    .mcq-card:hover { border-color: rgba(0,229,255,0.3); }
+    .mcq-card .q-num {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .mcq-card .question {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .options { display: flex; flex-direction: column; gap: 8px; }
+    .option {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .option:hover { background: rgba(0,229,255,0.06); border-color: rgba(0,229,255,0.3); color: var(--accent); }
+    .option.correct { background: rgba(34,197,94,0.1); border-color: var(--green); color: var(--green); }
+    .option.wrong { background: rgba(239,68,68,0.1); border-color: #ef4444; color: #ef4444; }
+
+    /* TIPS SECTION */
+    .tips-section { padding: 60px 0; }
+    .tips-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .tip-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .tip-card:hover { border-color: rgba(124,58,237,0.4); }
+    .tip-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: rgba(124,58,237,0.4);
+      line-height: 1;
+      min-width: 36px;
+    }
+    .tip-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .tip-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* PYQ SECTION */
+    .pyq-section { padding: 60px 0; }
+    .pyq-list { display: flex; flex-direction: column; gap: 12px; }
+    .pyq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .pyq-item:hover { border-color: rgba(0,229,255,0.3); transform: translateX(4px); }
+    .pyq-info { display: flex; align-items: center; gap: 16px; }
+    .pyq-year {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      min-width: 60px;
+    }
+    .pyq-details h4 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+    .pyq-details span { font-size: 13px; color: var(--muted); }
+    .pyq-badge {
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(0,229,255,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.2);
+      white-space: nowrap;
+    }
+
+    /* NOTES SECTION */
+    .notes-section { padding: 60px 0; }
+    .notes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .note-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: all 0.2s;
+    }
+    .note-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .note-icon { font-size: 28px; margin-bottom: 12px; }
+    .note-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .note-card p { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .note-meta { display: flex; align-items: center; justify-content: space-between; }
+    .note-pages { font-size: 12px; color: var(--muted); }
+    .note-btn {
+      padding: 5px 12px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(0,229,255,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .note-btn:hover { background: rgba(0,229,255,0.2); }
+
+    /* CTA */
+    .cta-section {
+      padding: 60px 0 80px;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(124,58,237,0.08));
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-box h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    .cta-box p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
+    .cta-form { display: flex; gap: 12px; max-width: 440px; margin: 0 auto; }
+    .cta-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+    }
+    .cta-form input:focus { border-color: var(--accent); }
+    .cta-form input::placeholder { color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer span { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .subject-grid, .notes-grid { grid-template-columns: 1fr; }
+      .mcq-grid, .tips-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+      .cta-form { flex-direction: column; }
+      .nav-links { display: none; }
+      .pyq-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .cta-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Priyanshu<span>NEET</span></div>
+    <div class="nav-links">
+      <a href="#subjects">Subjects</a>
+      <a href="#mcq">MCQ</a>
+      <a href="#tips">Tips</a>
+      <a href="#pyq">PYQ</a>
+      <a href="#notes">Notes</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="badge"><span class="badge-dot"></span> Free NEET Preparation</div>
+    <h1>Crack NEET with<br><span class="highlight">Smart Study</span></h1>
+    <p>Free notes, MCQ practice, previous year papers, and proven strategy — everything you need in one place.</p>
+    <div class="hero-btns">
+      <a href="#mcq" class="btn btn-primary">Practice MCQ Now</a>
+      <a href="#notes" class="btn btn-outline">Get Free Notes</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="container">
+  <div class="stats-row">
+    <div class="stat-card">
+      <strong>720</strong>
+      <span>Total NEET marks</span>
+    </div>
+    <div class="stat-card">
+      <strong>360</strong>
+      <span>Biology marks (most important!)</span>
+    </div>
+    <div class="stat-card">
+      <strong>2013+</strong>
+      <span>PYQ questions available</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUBJECTS -->
+<section class="subjects" id="subjects">
+  <div class="container">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Choose Your Subject</h2>
+      <p>Structured content for all three NEET subjects</p>
+    </div>
+    <div class="subject-grid">
+      <div class="subject-card bio">
+        <div class="subject-icon">🌿</div>
+        <h3>Biology</h3>
+        <p>Botany + Zoology. Highest weightage in NEET. Master NCERT thoroughly.</p>
+        <span class="subject-tag tag-bio">360 Marks</span>
+      </div>
+      <div class="subject-card chem">
+        <div class="subject-icon">⚗️</div>
+        <h3>Chemistry</h3>
+        <p>Physical, Organic & Inorganic. Focus on reactions and concepts from NCERT.</p>
+        <span class="subject-tag tag-chem">180 Marks</span>
+      </div>
+      <div class="subject-card phy">
+        <div class="subject-icon">⚡</div>
+        <h3>Physics</h3>
+        <p>Numericals + theory. Practice is key. Focus on mechanics, optics, and modern physics.</p>
+        <span class="subject-tag tag-phy">180 Marks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCQ PRACTICE -->
+<section class="mcq-section" id="mcq">
+  <div class="container">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Practice MCQ Questions</h2>
+      <p>Click an option to check your answer instantly</p>
+    </div>
+    <div class="mcq-grid">
+
+      <div class="mcq-card">
+        <div class="q-num">Biology • Q1</div>
+        <div class="question">Which organelle is called the "powerhouse of the cell"?</div>
+        <div class="options">
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">A. Nucleus</button>
+          <button class="option" data-correct="true" onclick="checkAnswer(this)">B. Mitochondria</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">C. Ribosome</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">D. Golgi Body</button>
+        </div>
+      </div>
+
+      <div class="mcq-card">
+        <div class="q-num">Chemistry • Q2</div>
+        <div class="question">What is the atomic number of Carbon?</div>
+        <div class="options">
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">A. 4</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">B. 8</button>
+          <button class="option" data-correct="true" onclick="checkAnswer(this)">C. 6</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">D. 12</button>
+        </div>
+      </div>
+
+      <div class="mcq-card">
+        <div class="q-num">Biology • Q3</div>
+        <div class="question">DNA replication occurs during which phase of the cell cycle?</div>
+        <div class="options">
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">A. G1 Phase</button>
+          <button class="option" data-correct="true" onclick="checkAnswer(this)">B. S Phase</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">C. G2 Phase</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">D. M Phase</button>
+        </div>
+      </div>
+
+      <div class="mcq-card">
+        <div class="q-num">Physics • Q4</div>
+        <div class="question">What is the SI unit of electric current?</div>
+        <div class="options">
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">A. Volt</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">B. Ohm</button>
+          <button class="option" data-correct="true" onclick="checkAnswer(this)">C. Ampere</button>
+          <button class="option" data-correct="false" onclick="checkAnswer(this)">D. Watt</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-section" id="tips">
+  <div class="container">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>NEET Tips & Strategy</h2>
+      <p>Proven tips from toppers to crack NEET</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">01</div>
+        <div>
+          <h4>NCERT First, Always</h4>
+          <p>80%+ NEET questions come directly from NCERT. Read every line carefully, especially Biology diagrams and definitions.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">02</div>
+        <div>
+          <h4>Biology = Top Priority</h4>
+          <p>Biology has 360 marks out of 720. Master it and you're halfway to a great score. Don't neglect Zoology.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">03</div>
+        <div>
+          <h4>Solve PYQ Daily</h4>
+          <p>Previous year questions repeat in NEET. Solve at least 20 PYQs daily — it improves speed and accuracy both.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">04</div>
+        <div>
+          <h4>Revision > New Topics</h4>
+          <p>In last 2 months, stop reading new topics. Revise what you know 3-4 times. Memory retention is the key.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">05</div>
+        <div>
+          <h4>Mock Tests Every Week</h4>
+          <p>Give full 3.5 hour mock test every Sunday. Analyze mistakes the next day. Improvement comes from review, not just practice.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">06</div>
+        <div>
+          <h4>Sleep & Health Matter</h4>
+          <p>7-8 hours sleep is mandatory. A tired brain can't retain. Study smart — 6 focused hours beats 12 distracted hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PYQ -->
+<section class="pyq-section" id="pyq">
+  <div class="container">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Previous Year Papers</h2>
+      <p>Official NEET papers — most important resource for preparation</p>
+    </div>
+    <div class="pyq-list">
+      <div class="pyq-item">
+        <div class="pyq-info">
+          <div class="pyq-year">2024</div>
+          <div class="pyq-details">
+            <h4>NEET UG 2024 — Official Paper</h4>
+            <span>180 Questions • Physics, Chemistry, Biology</span>
+          </div>
+        </div>
+        <span class="pyq-badge">Coming Soon</span>
+      </div>
+      <div class="pyq-item">
+        <div class="pyq-info">
+          <div class="pyq-year">2023</div>
+          <div class="pyq-details">
+            <h4>NEET UG 2023 — Official Paper</h4>
+            <span>180 Questions • With Answer Key</span>
+          </div>
+        </div>
+        <span class="pyq-badge">Coming Soon</span>
+      </div>
+      <div class="pyq-item">
+        <div class="pyq-info">
+          <div class="pyq-year">2022</div>
+          <div class="pyq-details">
+            <h4>NEET UG 2022 — Official Paper</h4>
+            <span>180 Questions • With Solutions</span>
+          </div>
+        </div>
+        <span class="pyq-badge">Coming Soon</span>
+      </div>
+      <div class="pyq-item">
+        <div class="pyq-info">
+          <div class="pyq-year">2021</div>
+          <div class="pyq-details">
+            <h4>NEET UG 2021 — Official Paper</h4>
+            <span>180 Questions • With Solutions</span>
+          </div>
+        </div>
+        <span class="pyq-badge">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section class="notes-section" id="notes">
+  <div class="container">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Free Study Notes</h2>
+      <p>Chapter-wise notes for quick revision</p>
+    </div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-icon">🌿</div>
+        <h4>Cell Biology</h4>
+        <p>Cell structure, organelles, cell division — complete chapter notes.</p>
+        <div class="note-meta">
+          <span class="note-pages">~12 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">🧬</div>
+        <h4>Genetics & Evolution</h4>
+        <p>Mendel's laws, DNA structure, mutation, evolution theories.</p>
+        <div class="note-meta">
+          <span class="note-pages">~18 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">⚗️</div>
+        <h4>Organic Chemistry</h4>
+        <p>Reactions, mechanisms, named reactions — all in one place.</p>
+        <div class="note-meta">
+          <span class="note-pages">~20 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">🔬</div>
+        <h4>Human Physiology</h4>
+        <p>Digestion, respiration, circulation — diagram-based notes.</p>
+        <div class="note-meta">
+          <span class="note-pages">~16 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">⚡</div>
+        <h4>Electrostatics</h4>
+        <p>Coulomb's law, electric field, potential — formula sheet included.</p>
+        <div class="note-meta">
+          <span class="note-pages">~10 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-icon">🌡️</div>
+        <h4>Thermodynamics</h4>
+        <p>Laws, processes, entropy — both Physics and Chemistry covered.</p>
+        <div class="note-meta">
+          <span class="note-pages">~14 pages</span>
+          <a href="#" class="note-btn">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Stay Updated 🎯</h2>
+      <p>Get notified when new notes, MCQs and PYQs are added. Free forever.</p>
+      <div class="cta-form">
+        <input type="email" placeholder="Enter your email" />
+        <button class="btn btn-primary">Notify Me</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Made with ❤️ by <span>Priyanshu NEET</span> • Free for all NEET aspirants
+  </div>
+</footer>
+
+<!-- CHATBOT WIDGET -->
+<style>
+  #chat-fab {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 1000;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00e5ff, #7c3aed);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 6px 28px rgba(0,229,255,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #chat-fab:hover { transform: scale(1.08); box-shadow: 0 10px 36px rgba(0,229,255,0.45); }
+
+  #chat-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 999;
+    width: 360px;
+    height: 520px;
+    background: #0d1117;
+    border: 1px solid #1e2a3a;
+    border-radius: 24px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: popUp 0.25s ease;
+  }
+  #chat-widget.open { display: flex; }
+
+  @keyframes popUp {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .cw-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: #111827;
+    border-bottom: 1px solid #1e2a3a;
+    flex-shrink: 0;
+  }
+  .cw-avatar {
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00e5ff, #7c3aed);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .cw-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; }
+  .cw-sub { font-size: 11px; color: #8da5bf; }
+  .cw-close {
+    margin-left: auto;
+    background: none; border: none;
+    color: #8da5bf; font-size: 20px;
+    cursor: pointer; line-height: 1;
+    padding: 4px;
+    border-radius: 6px;
+    transition: color 0.2s;
+  }
+  .cw-close:hover { color: #e2f0ff; }
+
+  #cw-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  #cw-messages::-webkit-scrollbar { width: 3px; }
+  #cw-messages::-webkit-scrollbar-thumb { background: #1e2a3a; border-radius: 3px; }
+
+  .cw-msg { display: flex; gap: 8px; }
+  .cw-msg.user { flex-direction: row-reverse; }
+  .cw-msg .av {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0; margin-top: 2px;
+  }
+  .cw-msg.bot .av { background: linear-gradient(135deg, #00e5ff, #7c3aed); }
+  .cw-msg.user .av { background: #1e2a3a; border: 1px solid #2a3a4a; }
+  .cw-bubble {
+    max-width: 78%;
+    padding: 9px 13px;
+    border-radius: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .cw-msg.bot .cw-bubble {
+    background: #111827;
+    border: 1px solid #1e2a3a;
+    border-top-left-radius: 4px;
+    color: #e2f0ff;
+  }
+  .cw-msg.user .cw-bubble {
+    background: linear-gradient(135deg, #00e5ff, #0099bb);
+    color: #06080f;
+    font-weight: 500;
+    border-top-right-radius: 4px;
+  }
+
+  .cw-typing { display: flex; gap: 4px; padding: 2px 0; align-items: center; }
+  .cw-typing span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #00e5ff;
+    animation: cwBounce 1.2s infinite;
+  }
+  .cw-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .cw-typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes cwBounce {
+    0%,60%,100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  .cw-footer {
+    padding: 10px 12px;
+    border-top: 1px solid #1e2a3a;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #111827;
+    flex-shrink: 0;
+  }
+  #cw-input {
+    flex: 1;
+    background: #0d1117;
+    border: 1px solid #1e2a3a;
+    border-radius: 10px;
+    color: #e2f0ff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 8px 12px;
+    outline: none;
+    resize: none;
+    max-height: 80px;
+    line-height: 1.4;
+  }
+  #cw-input:focus { border-color: #00e5ff; }
+  #cw-input::placeholder { color: #8da5bf; }
+  #cw-send {
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #00e5ff, #7c3aed);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.15s;
+  }
+  #cw-send:hover { transform: scale(1.05); }
+  #cw-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  @media (max-width: 420px) {
+    #chat-widget { width: calc(100vw - 32px); right: 16px; bottom: 90px; }
+    #chat-fab { right: 16px; bottom: 16px; }
+  }
+</style>
+
+<!-- FAB Button -->
+<button id="chat-fab" onclick="toggleChat()" title="NEET AI Dost se poochho">🤖</button>
+
+<!-- Chat Widget -->
+<div id="chat-widget">
+  <div class="cw-header">
+    <div class="cw-avatar">🤖</div>
+    <div>
+      <div class="cw-title">NEET AI Dost</div>
+      <div class="cw-sub">NEET ke sawal poochho • Ask anything!</div>
+    </div>
+    <button class="cw-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div id="cw-messages">
+    <div class="cw-msg bot">
+      <div class="av">🤖</div>
+      <div class="cw-bubble">Namaste! 🙏 Main tumhara NEET AI Dost hoon. Biology, Chemistry, Physics — kuch bhi poochho, main help karunga! 💪</div>
+    </div>
+  </div>
+  <div class="cw-footer">
+    <textarea id="cw-input" rows="1" placeholder="NEET question poochho..."></textarea>
+    <button id="cw-send" onclick="cwSend()">➤</button>
+  </div>
+</div>
+
+<script>
+  function checkAnswer(btn) {
+    const options = btn.closest('.options').querySelectorAll('.option');
+    options.forEach(o => o.disabled = true);
+    const isCorrect = btn.dataset.correct === 'true';
+    if (isCorrect) {
+      btn.classList.add('correct');
+    } else {
+      btn.classList.add('wrong');
+      options.forEach(o => {
+        if (o.dataset.correct === 'true') o.classList.add('correct');
+      });
+    }
+  }
+
+  // CHATBOT
+  const cwHistory = [];
+  const NEET_SYSTEM = `You are "NEET AI Dost" — a friendly NEET exam assistant that speaks in Hinglish (mix of Hindi and English).
+
+Rules:
+- Always respond in Hinglish — mix Hindi and English naturally.
+- You are a NEET expert. Help with Biology, Chemistry, Physics questions.
+- Explain concepts clearly with examples.
+- Be warm and encouraging like a good tutor (dost).
+- Use emojis occasionally.
+- Keep answers concise but complete.
+- If asked non-NEET topics, gently redirect to NEET prep.
+- Never break character. You are NEET AI Dost.`;
+
+  function toggleChat() {
+    const w = document.getElementById('chat-widget');
+    w.classList.toggle('open');
+    if (w.classList.contains('open')) {
+      setTimeout(() => document.getElementById('cw-input').focus(), 100);
+    }
+  }
+
+  const cwInput = document.getElementById('cw-input');
+  cwInput.addEventListener('input', () => {
+    cwInput.style.height = 'auto';
+    cwInput.style.height = Math.min(cwInput.scrollHeight, 80) + 'px';
+  });
+  cwInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); cwSend(); }
+  });
+
+  function cwAddMsg(role, text) {
+    const msgs = document.getElementById('cw-messages');
+    const row = document.createElement('div');
+    row.className = `cw-msg ${role}`;
+    row.innerHTML = `
+      <div class="av">${role === 'bot' ? '🤖' : '👤'}</div>
+      <div class="cw-bubble">${text}</div>`;
+    msgs.appendChild(row);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function cwShowTyping() {
+    const msgs = document.getElementById('cw-messages');
+    const row = document.createElement('div');
+    row.className = 'cw-msg bot'; row.id = 'cw-typing';
+    row.innerHTML = `<div class="av">🤖</div><div class="cw-bubble"><div class="cw-typing"><span></span><span></span><span></span></div></div>`;
+    msgs.appendChild(row);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function cwRemoveTyping() {
+    const t = document.getElementById('cw-typing');
+    if (t) t.remove();
+  }
+
+  async function cwSend() {
+    const text = cwInput.value.trim();
+    if (!text) return;
+
+    cwAddMsg('user', text);
+    cwHistory.push({ role: 'user', content: text });
+    cwInput.value = '';
+    cwInput.style.height = 'auto';
+
+    const btn = document.getElementById('cw-send');
+    btn.disabled = true;
+    cwShowTyping();
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: NEET_SYSTEM,
+          messages: cwHistory
+        })
+      });
+      const data = await res.json();
+      cwRemoveTyping();
+      const reply = data.content?.map(b => b.text || '').join('') || 'Maafi karo, kuch galat ho gaya. Dobara try karo! 🙏';
+      cwHistory.push({ role: 'assistant', content: reply });
+      cwAddMsg('bot', reply);
+    } catch {
+      cwRemoveTyping();
+      cwAddMsg('bot', 'Network mein problem aa gayi. Thoda baad mein try karo. 🙏');
+    }
+
+    btn.disabled = false;
+    cwInput.focus();
+  }
+</script>
+
+</body>
+</html>
